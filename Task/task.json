@@ -1,0 +1,20 @@
+{
+    "id": "0c243e82-ac21-4788-ba04-8cb496071dea",
+    "name": "GitTagExtractor",
+    "friendlyName": "Git Tag Extractor",
+    "description": "Extracts the Git tag for the current commit. If multiple tags exist, will return the first tag, ordered alphabetically.",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Matthew de Beer",
+    "version": {
+        "Major": 0,
+        "Minor": 0,
+        "Patch": 1
+    },
+    "instanceNameFormat": "Extract Git tag",
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
