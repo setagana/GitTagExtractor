@@ -2,7 +2,7 @@
     "id": "0c243e82-ac21-4788-ba04-8cb496071dea",
     "name": "GitTagExtractor",
     "friendlyName": "Git Tag Extractor",
-    "description": "Extracts the Git tag for the current commit. If multiple tags exist, will return the first tag, ordered alphabetically.",
+    "description": "Extracts the Git tag for the current commit and saves it to $(ExtractedGitTag). If multiple tags exist, will return a semi-colon separated list, ordered alphabetically.",
     "helpMarkDown": "",
     "category": "Utility",
     "author": "Matthew de Beer",
