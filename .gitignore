@@ -60,6 +60,9 @@ typings/
 # next.js build output
 .next
 
+# As this is a Typescript project, we don't won't to check in compiled files
+*.js
+
     
 .vscode/*
 !.vscode/settings.json
