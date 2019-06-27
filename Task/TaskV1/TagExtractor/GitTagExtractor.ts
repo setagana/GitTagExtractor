@@ -19,7 +19,7 @@ const GitTagExtractor: GitTagExtractorConstructor = class GitTagExtractor implem
     }
 
     formatTagString(str: string, separator: string): string {
-        var tags = str.split(this.separator);
+        var tags = str.split(separator);
         var filteredTags = tags.filter(function (element) {
             return !(element === '' || element == null);
         });

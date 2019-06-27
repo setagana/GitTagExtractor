@@ -1,7 +1,6 @@
 import { ExecOutputReturnValue } from 'shelljs';
 import { GitClientConstructor } from './GitClientConstructor';
 import { GitClientInterface } from './GitClientInterface';
-import operatingSystem = require('os');
 
 const CommandLineGitClient: GitClientConstructor = class CommandLineGitClient implements GitClientInterface {
     which: (command: string) => string;
