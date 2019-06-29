@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import { GitTagExtractor } from '../../../TaskV1/TagExtractor/GitTagExtractor';
 import { GitClientInterface } from '../../../TaskV1/GitClient/GitClientInterface';
-import { join } from 'path';
 
 export default function GitExtractorTests() {
     class MockGitClient implements GitClientInterface {
