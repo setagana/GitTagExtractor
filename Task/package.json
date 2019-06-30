@@ -1,6 +1,6 @@
 {
   "name": "gittagextractor",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An Azure DevOps Custom build/release task for extracting the tag of the Git commit being built.",
   "main": "index.js",
   "scripts": {
