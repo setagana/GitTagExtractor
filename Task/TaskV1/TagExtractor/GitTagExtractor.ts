@@ -12,18 +12,18 @@ const GitTagExtractor: GitTagExtractorConstructor = class GitTagExtractor implem
     }
 
     getGitTag(): string {
-        var rawTagString = this.gitClient.getTagString();
-        var formattedTagString = this.formatTagString(rawTagString, this.separator);
+        let rawTagString = this.gitClient.getTagString();
+        let formattedTagString = this.formatTagString(rawTagString, this.separator);
 
         return formattedTagString;
     }
 
     formatTagString(str: string, separator: string): string {
-        var tags = str.split(separator);
-        var filteredTags = tags.filter(function (element) {
+        let tags = str.split(separator);
+        let filteredTags = tags.filter(function (element) {
             return !(element === '' || element == null);
         });
-        var sortedTags = filteredTags.sort();
+        let sortedTags = filteredTags.sort();
         return sortedTags.join(";");
     }
 }

@@ -16,7 +16,7 @@ const CommandLineGitClient: GitClientConstructor = class CommandLineGitClient im
             throw new Error('Executing machine does not appear to have a Git client installed.');
         }
     
-        var tagString = this.exec('git tag -l --points-at HEAD')
+        let tagString = this.exec('git tag -l --points-at HEAD')
             .output;
         return tagString; 
     }
