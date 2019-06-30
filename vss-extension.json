@@ -1,0 +1,39 @@
+{
+    "manifestVersion": 1,
+    "id": "git-tag-extractor",
+    "name": "Git Tag Extractor",
+    "version": "1.0.0",
+    "publisher": "MatthewdeBeer",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Useful for retrieving Git tags from a commit.",
+    "galleryFlags": [
+        "Preview"
+    ],
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "Task/images/tag.png"        
+    },
+    "files": [
+        {
+            "path": "Task"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "tag-extractor-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Task"
+            }
+        }
+    ]
+}
