@@ -16,8 +16,6 @@ const GitTagExtractor: GitTagExtractorConstructor = class GitTagExtractor implem
         let rawTagString = this.gitClient.getTagString();
         let formattedTagString = this.formatTagString(rawTagString, this.separator);
 
-        taskLibrary.debug('Git Tag Extractor: Formatted found tags: ' + formattedTagString);
-
         return formattedTagString;
     }
 
