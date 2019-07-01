@@ -9,8 +9,12 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 1
+        "Patch": 2
     },
+    "OutputVariables": [{
+        "name" : "ExtractedGitTag",
+        "description" : "Contains any extracted tags from the Git commit. Semi-colon separated, in the case of multiple tags."
+    }],
     "instanceNameFormat": "Extract Git tag",
     "execution": {
         "Node": {
