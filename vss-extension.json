@@ -21,7 +21,7 @@
     },
     "files": [
         {
-            "path": "Task"
+            "path": "src"
         }
     ],
     "contributions": [
@@ -32,7 +32,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "Task"
+                "name": "src"
             }
         }
     ]
