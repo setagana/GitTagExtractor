@@ -17,7 +17,7 @@
         "Azure Pipelines"
     ],
     "icons": {
-        "default": "Task/images/tag.png"        
+        "default": "images/tag.png"        
     },
     "files": [
         {
