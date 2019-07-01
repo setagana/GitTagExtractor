@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { CommandLineGitClient } from '../../../TaskV1/GitClient/CommandLineGitClient';
+import { CommandLineGitClient } from '../../../GitClient/CommandLineGitClient';
 import { ExecOutputReturnValue } from 'shelljs';
 
 export default function CommandLineGitClientTests() {
