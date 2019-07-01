@@ -13,15 +13,15 @@
     },
     "inputs": [
         {
-            "name": "outputOptions",
+            "name": "outputOption",
             "type": "pickList",
             "label": "Output options",
             "defaultValue": "AllTags",
             "required": true,
-            "helpMarkDown": "Select whether to extract a semi-colon separated list of all tags, or just the semantic version tag.",
+            "helpMarkDown": "Select whether to extract a semi-colon separated list of all tags, or just the first alphabetically-sorted semantic version tag.",
             "options": {
               "AllTags": "Extract all tags",
-              "SemVerOnly": "Extract the first semantic version tag"
+              "SemanticVersionTagOnly": "Extract the first semantic version tag"
             }
         },
         {
