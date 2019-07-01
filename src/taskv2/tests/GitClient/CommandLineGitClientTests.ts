@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { CommandLineGitClient } from '../../../GitClient/CommandLineGitClient';
+import { CommandLineGitClient } from '../../GitClient/CommandLineGitClient';
 import { ExecOutputReturnValue } from 'shelljs';
 
 export default function CommandLineGitClientTests() {
@@ -16,7 +16,7 @@ export default function CommandLineGitClientTests() {
         output: string = '1.0.0';
     };
 
-    function mockExec(command: string): ExecOutputReturnValue {
+    function mockNoHashExec(command: string): ExecOutputReturnValue {
         if (command === 'git tag -l --points-at HEAD') {
             return new MockExecOutputReturnValue();
         } else {
@@ -24,14 +24,31 @@ export default function CommandLineGitClientTests() {
         }
     }
 
+    function mockExecWithHash(command: string): ExecOutputReturnValue {
+        if (command === 'git tag -l --points-at testHash') {
+            return new MockExecOutputReturnValue();
+        } else {
+            throw new Error('Git client attempted to execute an unexpected command: ' + command);
+        }
+    }
+
     it('should throw an error if no Git client is installed', () => {
-        let gitClient = new CommandLineGitClient(mockFailureWhich, mockExec);
+        let gitClient = new CommandLineGitClient(mockFailureWhich, mockNoHashExec, '');
         
         expect(gitClient.getTagString.bind(gitClient)).to.throw('Executing machine does not appear to have a Git client installed.');
     });
 
-    it('should return the output of git tag -l --points-at HEAD', () => {
-        let gitClient = new CommandLineGitClient(mockSuccessWhich, mockExec);
+    it('should return the tags of the latest commit when no hash is provided', () => {
+        let gitClient = new CommandLineGitClient(mockSuccessWhich, mockNoHashExec, '');
+        let expectedResult = '1.0.0';
+        
+        let result = gitClient.getTagString();
+        
+        expect(result).to.equal(expectedResult);
+    });
+
+    it('should return the tags of the specified hash when a hash is given', () => {
+        let gitClient = new CommandLineGitClient(mockSuccessWhich, mockExecWithHash, 'testHash');
         let expectedResult = '1.0.0';
         
         let result = gitClient.getTagString();

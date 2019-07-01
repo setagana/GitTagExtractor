@@ -1,5 +1,5 @@
-import GitTagExtractorTests from './taskv1/TagExtractor/GitTagExtractorTests';
-import CommandLineGitClientTests from './taskv1/GitClient/CommandLineGitClientTests';
+import GitTagExtractorTests from './TagExtractor/GitTagExtractorTests';
+import CommandLineGitClientTests from './GitClient/CommandLineGitClientTests';
 
 describe('Task version 2 tests', function() {
     describe('Tag Extractor', GitTagExtractorTests.bind(this));
