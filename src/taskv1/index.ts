@@ -4,7 +4,7 @@ import { CommandLineGitClient } from './GitClient/CommandLineGitClient';
 import { GitTagExtractor } from './TagExtractor/GitTagExtractor';
 
 async function run() {
-    console.log('Git Tag Extractor: Running');
+    taskLibrary.debug('Git Tag Extractor: Running');
 
     // TODO: Test if this works on Windows and Linux hosted agents
     let separator = decodeURI('%0A');
@@ -15,12 +15,12 @@ async function run() {
     try {
         let tag = gitTagExtractor.getGitTag();
         taskLibrary.setVariable('ExtractedGitTag', tag);
-        console.log('Git Tag Extractor: Set ExtractedGitTag variable: ' + tag);
+        taskLibrary.debug('Git Tag Extractor: Set ExtractedGitTag variable: ' + tag);
     } catch (error) {
         taskLibrary.setResult(taskLibrary.TaskResult.Failed, error.message);
     }
 
-    console.log('Git Tag Extractor: Finished');
+    taskLibrary.debug('Git Tag Extractor: Finished');
 }
 
 run();
