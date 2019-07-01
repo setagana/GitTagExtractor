@@ -1,3 +1,4 @@
+import taskLibrary = require('azure-pipelines-task-lib/task');
 import { ExecOutputReturnValue } from 'shelljs';
 import { GitClientConstructor } from './GitClientConstructor';
 import { GitClientInterface } from './GitClientInterface';
@@ -18,7 +19,7 @@ const CommandLineGitClient: GitClientConstructor = class CommandLineGitClient im
     
         let tagString = this.exec('git tag -l --points-at HEAD')
             .output;
-        console.log('Git Tag Extractor: Found the following tag(s): ' + tagString);
+            taskLibrary.debug('Git Tag Extractor: Found the following tag(s): ' + tagString);
         return tagString; 
     }
 }
