@@ -1,0 +1,38 @@
+{
+  "name": "gittagextractor",
+  "version": "1.0.0",
+  "description": "An Azure DevOps Custom build/release task for extracting the tag of the Git commit being built.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "mocha-test": "mocha tests/_suite.js",
+    "test": "run-s build mocha-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setagana/GitTagExtractor.git"
+  },
+  "keywords": [
+    "AzureDevOps",
+    "BuildTask",
+    "ReleaseTask"
+  ],
+  "author": "Matthew de Beer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/setagana/GitTagExtractor/issues"
+  },
+  "homepage": "https://github.com/setagana/GitTagExtractor#readme",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.10",
+    "@types/q": "^1.5.2",
+    "@types/shelljs": "^0.3.33",
+    "chai": "^4.2.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
