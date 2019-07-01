@@ -1,3 +1,4 @@
+import taskLibrary = require('azure-pipelines-task-lib/task');
 import { GitClientInterface } from '../GitClient/GitClientInterface';
 import { GitTagExtractorInterface } from './GitTagExtractorInterface';
 import { GitTagExtractorConstructor } from './GitTagExtractorConstructor';
@@ -15,7 +16,7 @@ const GitTagExtractor: GitTagExtractorConstructor = class GitTagExtractor implem
         let rawTagString = this.gitClient.getTagString();
         let formattedTagString = this.formatTagString(rawTagString, this.separator);
 
-        console.log('Git Tag Extractor: Formatted found tags: ' + formattedTagString);
+        taskLibrary.debug('Git Tag Extractor: Formatted found tags: ' + formattedTagString);
 
         return formattedTagString;
     }
