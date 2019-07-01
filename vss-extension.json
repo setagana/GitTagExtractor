@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "git-tag-extractor",
     "name": "Git Tag Extractor",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "MatthewdeBeer",
     "targets": [
         {
@@ -17,11 +17,11 @@
         "Azure Pipelines"
     ],
     "icons": {
-        "default": "Task/images/tag.png"        
+        "default": "images/tag.png"        
     },
     "files": [
         {
-            "path": "Task"
+            "path": "src"
         }
     ],
     "contributions": [
@@ -32,7 +32,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "Task"
+                "name": "src"
             }
         }
     ]
