@@ -18,6 +18,7 @@ const CommandLineGitClient: GitClientConstructor = class CommandLineGitClient im
     
         let tagString = this.exec('git tag -l --points-at HEAD')
             .output;
+        console.log('Git Tag Extractor: Found the following tag(s): ' + tagString);
         return tagString; 
     }
 }
