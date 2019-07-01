@@ -29,10 +29,10 @@ const GitTagExtractor: GitTagExtractorConstructor = class GitTagExtractor implem
         let tags = str.split(separator);
         let filteredTags = tags.filter(function (element) {
             let elementIsNotEmpty = !(element === '' || element == null);
-            if (container.outputOption === OutputOptions.SemanticVersionTagOnly) {
-                return elementIsNotEmpty && container.isSemanticVersionTag(element);
+            if (container.outputOption === OutputOptions.AllTags) {
+                return elementIsNotEmpty;
             }
-            return elementIsNotEmpty;
+            return elementIsNotEmpty && container.isSemanticVersionTag(element);
         });
         let sortedTags = filteredTags.sort();
         
