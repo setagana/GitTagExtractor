@@ -1,0 +1,42 @@
+{
+    "id": "0c243e82-ac21-4788-ba04-8cb496071dea",
+    "name": "GitTagExtractor",
+    "friendlyName": "Git Tag Extractor",
+    "description": "Extracts Git tags from commits. Will either return all tags in a semi-colon separated list, or the first found tag that matches the semantic version format X.X.X. Defaults to using the latest commit if no commit SHA is provided.",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Matthew de Beer",
+    "version": {
+        "Major": 2,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "inputs": [
+        {
+            "name": "outputOptions",
+            "type": "pickList",
+            "label": "Output options",
+            "defaultValue": "AllTags",
+            "required": true,
+            "helpMarkDown": "Select whether to extract a semi-colon separated list of all tags, or just the semantic version tag.",
+            "options": {
+              "AllTags": "Extract all tags",
+              "SemVerOnly": "Extract the first semantic version tag"
+            }
+        },
+        {
+            "name": "commitSha",
+            "type": "string",
+            "label": "Short commit SHA",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The short commit SHA to check for tags. If left empty, the most recent commit will be checked."
+        }
+    ],
+    "instanceNameFormat": "Extract Git tag",
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
