@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "git-tag-extractor",
     "name": "Git Tag Extractor",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "MatthewdeBeer",
     "targets": [
         {
